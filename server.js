@@ -10,28 +10,68 @@ app.listen(port, function() {
 });
 
 app.get("/", function (req, res) {
-  // res.send("hello universe!");
   res.sendFile(index.html);
 });
 
+//Adjectives
 var Adjective = function() {
   this.tall = true;
-  this.thirsty = true;
-  this.happy = true;
+  this.dark = true;
+  this.handsome = true;
 }
 
 var adjective = new Adjective();
 
-function getRandomWord(object) {
+function getRandomAdj(object) {
   var array = Object.keys(object);
   var randomProp = array[Math.floor(Math.random() * array.length)];
     return {word: randomProp};
 }
 
-getRandomWord(adjective);
+getRandomAdj(adjective);
 
 app.get("/adjective", function (req, res) {
-  res.json(getRandomWord(adjective));
+  res.json(getRandomAdj(adjective));
 });
 
+//Verbs
+var Verb = function() {
+  this.eat = true;
+  this.drink = true;
+  this.sleep = true;
+}
 
+var verb = new Verb();
+
+function getRandomVerb(object) {
+  var array = Object.keys(object);
+  var randomProp = array[Math.floor(Math.random() * array.length)];
+    return {word: randomProp};
+}
+
+getRandomVerb(verb);
+
+app.get("/verb", function (req, res) {
+  res.json(getRandomVerb(verb));
+});
+
+//Nouns
+var Noun = function() {
+  this.people = true;
+  this.places = true;
+  this.things = true;
+}
+
+var noun = new Noun();
+
+function getRandomNoun(object) {
+  var array = Object.keys(object);
+  var randomProp = array[Math.floor(Math.random() * array.length)];
+    return {word: randomProp};
+}
+
+getRandomNoun(noun);
+
+app.get("/noun", function (req, res) {
+  res.json(getRandomNoun(noun));
+});

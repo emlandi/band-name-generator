@@ -1,0 +1,18 @@
+* {
+  font-family: "Arial Black", "Georgia", "san-serif";
+  font-size: 16px;
+  background-color: lightgray;
+  text-align: center;
+}
+
+button {
+  padding: 20px;
+  margin: 20px;
+  border: 3px dotted darkblue;
+  background-color: darkgray;
+}
+
+#adjective, #noun, #verb {
+  display: inline;
+  text-decoration: underline;
+}
