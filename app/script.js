@@ -17,7 +17,7 @@ $(function() {
   });
 });
 
-$("#submitWords").on("submit", function(e) {
+$("#submitAdj").on("submit", function(e) {
   e.preventDefault();
 
   var adjective = $("input[name=adjective]").val();
@@ -28,6 +28,36 @@ $("#submitWords").on("submit", function(e) {
     $.post("adjective", adjPost, function(response) {
       var adjectiveRes = response.msg;
       $("#adjectiveRes").text(adjectiveRes);
+    });
+  };
+});
+
+$("#submitVerb").on("submit", function(e) {
+  e.preventDefault();
+
+  var verb = $("input[name=verb]").val();
+  var verbPost;
+
+  if(verb) {
+    verbPost = {word: verb};
+    $.post("verb", verbPost, function(response) {
+      var verbRes = response.msg;
+      $("#verbRes").text(verbRes);
+    });
+  };
+});
+
+$("#submitNoun").on("submit", function(e) {
+  e.preventDefault();
+
+  var noun = $("input[name=noun]").val();
+  var nounPost;
+
+  if(noun) {
+    nounPost = {word: noun};
+    $.post("noun", nounPost, function(response) {
+      var nounRes = response.msg;
+      $("#nounRes").text(nounRes);
     });
   };
 });
