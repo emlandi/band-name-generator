@@ -1,8 +1,6 @@
 * {
   font-family: "Georgia", "Arial", "san-serif";
-  font-size: 16px;
   background-color: lightgray;
-  text-align: center;
 }
 
 button {
@@ -14,5 +12,5 @@ button {
 
 #adjective, #noun, #verb {
   display: inline;
-  text-decoration: underline;
 }
+

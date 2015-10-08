@@ -17,17 +17,17 @@ $(function() {
   });
 });
 
-// $("#submitWords").on("submit", function(e) {
-//   e.preventDefault();
+$("#submitWords").on("submit", function(e) {
+  e.preventDefault();
 
-//   var adjective = $("input[name-adjective]").val();
-//   var adjPost;
+  var adjective = $("input[name=adjective]").val();
+  var adjPost;
 
-//   if(adjective) {
-//     adjPost = {word: adjective};
-//     $.post("adjective", adjPost, function(response) {
-//       var adjectiveRes = response.msg;
-//       $("#adjectiveRes").text(adjectiveRes);
-//     });
-//   };
-// };
+  if(adjective) {
+    adjPost = {word: adjective};
+    $.post("adjective", adjPost, function(response) {
+      var adjectiveRes = response.msg;
+      $("#adjectiveRes").text(adjectiveRes);
+    });
+  };
+});

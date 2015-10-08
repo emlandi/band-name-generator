@@ -1,10 +1,13 @@
 var express = require("express");
 var app = express();
+
 var bodyparser = require("body-parser");
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended: true}));
 
 var Adjective = require("./lib/adjective.js").adjective;
 var getRandomAdj = require("./lib/adjective.js").getRandomAdj;
-// var postWord = require("./lib/adjective.js").postWord;
+var postWord = require("./lib/adjective.js").postWord;
 var Verb = require("./lib/verb.js").verb;
 var getRandomVerb = require("./lib/verb.js").getRandomVerb;
 var Noun = require("./lib/noun.js").noun;
@@ -29,10 +32,10 @@ app.get("/adjective", function (req, res) {
   res.json(getRandomAdj(adjective));
 });
 
-// app.post("/adjective", function (req, res) {
-//   var word = postWord(req.body.word, adjective);
-//   res.json(word);
-// });
+app.post("/adjective", function (req, res) {
+  var word = postWord(req.body.word, adjective);
+  res.json(word);
+});
 
 //Verbs
 var verb = new Verb();

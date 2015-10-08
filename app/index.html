@@ -7,7 +7,7 @@
 </head>
 <body>
 
-</h1>Welcome to the Band Name Generator</h1>
+<h1>Welcome to the Band Name Generator</h1>
 <br>
 <button id="name">Get a band name!</button>
 <br>
@@ -16,11 +16,14 @@
 <p id="noun"></p>
 <p id="verb"></p>
 <br>
-<p>Submit a new word here!</p>
-<form>
-  <label>New Adjective:</label><input type="text" name="adjective"></input>
-</form>
 
+<h3>Submit a new word here!</h3>
+ <form id="submitWords">
+    <label for="user-adjective">New Adjective:</label>
+    <input type="text" name="adjective" id="user-adjective">
+    <input type="submit" value="Submit">
+ </form>
+<p id="adjectiveRes"></p>
 
 <script src="./lib/jquery-1.11.2.js"></script>
 <script src="script.js"></script>
