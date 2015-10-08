@@ -7,13 +7,11 @@ app.use(bodyparser.urlencoded({extended: true}));
 
 var Adjective = require("./lib/adjective.js").adjective;
 var getRandomAdj = require("./lib/adjective.js").getRandomAdj;
-var postAdj = require("./lib/adjective.js").postAdj;
 var Verb = require("./lib/verb.js").verb;
 var getRandomVerb = require("./lib/verb.js").getRandomVerb;
-var postVerb = require("./lib/verb.js").postVerb;
 var Noun = require("./lib/noun.js").noun;
 var getRandomNoun = require("./lib/noun.js").getRandomNoun;
-var postNoun = require("./lib/noun.js").postNoun;
+var postWord = require("./lib/postWord.js");
 
 var port = process.env.PORT || 3000;
 
@@ -35,7 +33,7 @@ app.get("/adjective", function (req, res) {
 });
 
 app.post("/adjective", function (req, res) {
-  var word = postAdj(req.body.word, adjective);
+  var word = postWord(req.body.word, adjective);
   res.json(word);
 });
 
@@ -47,7 +45,7 @@ app.get("/verb", function (req, res) {
 });
 
 app.post("/verb", function (req, res) {
-  var word = postVerb(req.body.word, verb);
+  var word = postWord(req.body.word, verb);
   res.json(word);
 });
 
@@ -59,6 +57,6 @@ app.get("/noun", function (req, res) {
 });
 
 app.post("/noun", function (req, res) {
-  var word = postNoun(req.body.word, noun);
+  var word = postWord(req.body.word, noun);
   res.json(word);
 });
