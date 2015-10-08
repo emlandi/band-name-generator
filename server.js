@@ -5,12 +5,10 @@ var bodyparser = require("body-parser");
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 
-var Adjective = require("./lib/adjective.js").adjective;
-var getRandomAdj = require("./lib/adjective.js").getRandomAdj;
-var Verb = require("./lib/verb.js").verb;
-var getRandomVerb = require("./lib/verb.js").getRandomVerb;
-var Noun = require("./lib/noun.js").noun;
-var getRandomNoun = require("./lib/noun.js").getRandomNoun;
+var Adjective = require("./lib/adjective.js");
+var Verb = require("./lib/verb.js");
+var Noun = require("./lib/noun.js");
+var getRandomWord = require("./lib/getRandomWord.js");
 var postWord = require("./lib/postWord.js");
 
 var port = process.env.PORT || 3000;
@@ -29,7 +27,7 @@ app.get("/", function (req, res) {
 var adjective = new Adjective();
 
 app.get("/adjective", function (req, res) {
-  res.json(getRandomAdj(adjective));
+  res.json(getRandomWord(adjective));
 });
 
 app.post("/adjective", function (req, res) {
@@ -41,7 +39,7 @@ app.post("/adjective", function (req, res) {
 var verb = new Verb();
 
 app.get("/verb", function (req, res) {
-  res.json(getRandomVerb(verb));
+  res.json(getRandomWord(verb));
 });
 
 app.post("/verb", function (req, res) {
@@ -53,7 +51,7 @@ app.post("/verb", function (req, res) {
 var noun = new Noun();
 
 app.get("/noun", function (req, res) {
-  res.json(getRandomNoun(noun));
+  res.json(getRandomWord(noun));
 });
 
 app.post("/noun", function (req, res) {
