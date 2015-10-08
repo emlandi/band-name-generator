@@ -1,5 +1,14 @@
 var express = require("express");
 var app = express();
+var bodyparser = require("body-parser");
+
+var Adjective = require("./lib/adjective.js").adjective;
+var getRandomAdj = require("./lib/adjective.js").getRandomAdj;
+// var postWord = require("./lib/adjective.js").postWord;
+var Verb = require("./lib/verb.js").verb;
+var getRandomVerb = require("./lib/verb.js").getRandomVerb;
+var Noun = require("./lib/noun.js").noun;
+var getRandomNoun = require("./lib/noun.js").getRandomNoun;
 
 var port = process.env.PORT || 3000;
 
@@ -14,63 +23,26 @@ app.get("/", function (req, res) {
 });
 
 //Adjectives
-var Adjective = function() {
-  this.tall = true;
-  this.dark = true;
-  this.handsome = true;
-}
-
 var adjective = new Adjective();
-
-function getRandomAdj(object) {
-  var array = Object.keys(object);
-  var randomProp = array[Math.floor(Math.random() * array.length)];
-    return {word: randomProp};
-}
-
-getRandomAdj(adjective);
 
 app.get("/adjective", function (req, res) {
   res.json(getRandomAdj(adjective));
 });
 
+// app.post("/adjective", function (req, res) {
+//   var word = postWord(req.body.word, adjective);
+//   res.json(word);
+// });
+
 //Verbs
-var Verb = function() {
-  this.eat = true;
-  this.drink = true;
-  this.sleep = true;
-}
-
 var verb = new Verb();
-
-function getRandomVerb(object) {
-  var array = Object.keys(object);
-  var randomProp = array[Math.floor(Math.random() * array.length)];
-    return {word: randomProp};
-}
-
-getRandomVerb(verb);
 
 app.get("/verb", function (req, res) {
   res.json(getRandomVerb(verb));
 });
 
 //Nouns
-var Noun = function() {
-  this.people = true;
-  this.places = true;
-  this.things = true;
-}
-
 var noun = new Noun();
-
-function getRandomNoun(object) {
-  var array = Object.keys(object);
-  var randomProp = array[Math.floor(Math.random() * array.length)];
-    return {word: randomProp};
-}
-
-getRandomNoun(noun);
 
 app.get("/noun", function (req, res) {
   res.json(getRandomNoun(noun));
