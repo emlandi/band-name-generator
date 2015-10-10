@@ -1,7 +1,7 @@
 'use strict';
 
 $(function() {
-  $('button').click(function() {
+  $('#name').click(function() {
     $.get('adjective', function(response) {
       var adjective = response.word;
       $('#adjective').text(adjective);
@@ -55,4 +55,15 @@ $('#submitWord').on('submit', function(e) {
     });
   }
 
+});
+
+// Extra Feature
+$(function() {
+  $('#quote').click(function() {
+    // $('#quoteRes').text("Test");
+    $.get('quote', function(response) {
+      console.log(response);
+      $('#quoteRes').text(response.msg);
+    });
+  });
 });

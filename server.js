@@ -60,3 +60,11 @@ app.post('/noun', function(req, res) {
   var word = postWord(req.body.word, noun);
   res.json(word);
 });
+
+//Extra Feature
+var getRandomQuote = require('./lib/quote.js');
+var quote = new getRandomQuote();
+
+app.get('/quote', function(req, res) {
+  res.json(getRandomQuote(quote));
+});
