@@ -62,9 +62,8 @@ app.post('/noun', function(req, res) {
 });
 
 //Extra Feature
-var getRandomQuote = require('./lib/quote.js');
-var quote = new getRandomQuote();
+var GetRandomQuote = require('./lib/quote.js');
 
 app.get('/quote', function(req, res) {
-  res.json(getRandomQuote(quote));
+  res.json(new GetRandomQuote());
 });
