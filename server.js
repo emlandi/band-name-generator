@@ -21,9 +21,9 @@ app.listen(port, function() {
   console.log('server started on port ' + port);
 });
 
-// app.get('/', function (req, res) {
-//   res.sendFile(index.html);
-// });
+app.get('/', function(req, res) {
+  res.sendFile('index.html');
+});
 
 //Adjectives
 var adjective = new Adjective();
