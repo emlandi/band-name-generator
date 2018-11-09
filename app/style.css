@@ -1,14 +1,14 @@
 * {
   font-family: 'Georgia', 'Arial', 'san-serif';
-  background-color: lightgray;
+  background-color: #C7EAEC;
 }
 
 button {
-  padding: 15px;
-  margin: 15px;
-  border: 3px solid darkblue;
-  background-color: darkgray;
-  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  border: 3px solid #509397;
+  background-color: #AEF6FA;
+  font-size: 14px;
 }
 
 #adjective, #noun, #verb {
