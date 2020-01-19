@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+<h1>Welcome to the Band Name Generator</h1>
+<br>
+<button id="name">Get a band name!</button>
+<br>
+  <p>Your band name is...</p>
+  <p id="adjective"></p>
+  <p id="noun"></p>
+  <p id="verb"></p>
+<br>
+<br>
+
+<h3>Now that you have a band name, you're on your way to making music history!</h3>
+
+<button id="quote">Need more inspiration?</button>
+<br>
+<p id="quoteRes"></p>
+<br>
+<br> 
+<h3>Submit new words here!</h3>
+  <form id="submitWord">
+    <label for="user-adjective">New Adjective:</label>
+    <input type="text" name="adjective" id="user-adjective">
+    <input type="submit" value="Submit">
+
+    <label for="user-noun">New Noun:</label>
+    <input type="text" name="noun" id="user-noun">
+    <input type="submit" value="Submit">
+
+    <label for="user-verb">New Verb:</label>
+    <input type="text" name="verb" id="user-verb">
+    <input type="submit" value="Submit">
+  </form>
+
+<p id="adjectiveRes"></p>
+<p id="nounRes"></p>
+<p id="verbRes"></p>
+
+
+
+<script src="./lib/jquery-1.11.2.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
+
